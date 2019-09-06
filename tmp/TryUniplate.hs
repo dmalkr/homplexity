@@ -8,13 +8,14 @@ import Distribution.Types.GenericPackageDescription
 import Distribution.Types.Library
 import Language.Haskell.Extension
 import Text.Pretty.Simple
+import Text.Pretty.Simple.Internal.OutputPrinter
 import qualified Data.ByteString as BS
 
 import Data.Generics.Uniplate.Data as U
 
 
 pp :: (Show a) => a -> IO ()
-pp = pPrintOpt NoCheckColorTty defaultOutputOptionsDarkBg
+pp = pPrint -- pPrintOpt NoCheckColorTty defaultOutputOptionsDarkBg
 
 
 data X = A [Extension]
